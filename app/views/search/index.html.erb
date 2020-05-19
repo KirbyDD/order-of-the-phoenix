@@ -1,0 +1,18 @@
+<% if @members && @members.count > 0 %>
+  <h1>Number of Order of the Pheonix Memebers for <%= @members.first.house %>: <%= @members.count %></h1>
+
+  <% @members.each do |member| %>
+    <article>
+      <h3>Name: <%= member.name %></h3>
+      <p>House: <%= member.house %></p>
+      <% if member.role %>
+        <p>Role: <%= member.role %></p>
+      <% end %>
+      <% if member.patronus %>
+        <p>Patronus: <%= member.patronus %></p>
+      <% end %>
+    </article>
+  <% end %>
+<% else %>
+  <h1>No Order of Pheonix Members for selected house.</h1>
+<% end %>
